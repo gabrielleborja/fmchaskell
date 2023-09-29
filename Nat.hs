@@ -35,6 +35,11 @@ fib (S O) = S O
 fib (S (S n)) = sum (fib(S n)) (fib n)
 
 min :: Nat -> Nat -> Nat
-min O n = O
-min n O = O
+min O _ = O
+min _ O = O
 min(S n) (S m) = S (min n m)
+
+max :: Nat -> Nat -> Nat
+max O n = n 
+max n O = n 
+max (S n) (S m) = S(min n m)
