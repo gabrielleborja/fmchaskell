@@ -28,3 +28,8 @@ fact (S n) = mult (S n) (fact n)
 double :: Nat -> Nat 
 double O = O
 double (S n) = S (S (double n)) 
+
+fib :: Nat -> Nat 
+fib O = O
+fib (S O) = S O
+fib (S (S n)) = sum (fib(S n)) (fib n)
