@@ -17,4 +17,8 @@ exp n O = S O
 exp n (S O) = n 
 exp n (S x) = mult n (exp n x)
 
+pred :: Nat -> Nat 
+pred O = O
+pred (S n) = n 
+
 
