@@ -8,5 +8,9 @@ sum :: Nat -> Nat -> Nat
 sum n O = n
 sum n (S m) = S (sum n m)
 
+mult :: Nat -> Nat -> Nat
+mult n O = O
+mult n (S m) = sum n (mult n m)
+
 
 
