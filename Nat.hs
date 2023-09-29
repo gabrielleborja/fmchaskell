@@ -33,3 +33,8 @@ fib :: Nat -> Nat
 fib O = O
 fib (S O) = S O
 fib (S (S n)) = sum (fib(S n)) (fib n)
+
+min :: Nat -> Nat -> Nat
+min O n = O
+min n O = O
+min(S n) (S m) = S (min n m)
