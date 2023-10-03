@@ -1,5 +1,5 @@
 module ListNat where
-import Prelude hiding (Nil, length, sum, product, elem, (++), append, reverse, allEven, True, Bool, False, anyEven, allOdd, anyOdd, allZero, anyZero, multNat)
+import Prelude hiding (Nil, length, sum, exp, product, elem, (++), append, reverse, allEven, True, Bool, False, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat)
 import Nat
 import Bool
 
@@ -67,3 +67,7 @@ addNat n (Cons x xs) = Cons (sum n x) (addNat n xs)
 multNat :: Nat -> ListNat -> ListNat
 multNat n Empty = Empty
 multNat n (Cons x xs) = Cons (mult n x) (multNat n xs) 
+
+expNat :: Nat -> ListNat -> ListNat
+expNat n Empty = Empty
+expNat n (Cons x xs) = Cons (exp n x) (expNat n xs) 
