@@ -1,5 +1,5 @@
 module ListNat where
-import Prelude hiding (Nil, length, sum, product, elem, (++), append, reverse, allEven, even, True, Bool, False, anyEven)
+import Prelude hiding (Nil, length, sum, product, elem, (++), append, reverse, allEven, True, Bool, False, anyEven, allOdd)
 import Nat
 import Bool
 
@@ -43,3 +43,7 @@ allEven (Cons x xs) = if_then_else2 (ev x) (allEven xs) False
 anyEven :: ListNat -> Bool
 anyEven Empty = False
 anyEven (Cons x xs) = if_then_else2 (ev x) True (anyEven xs)
+
+allOdd :: ListNat -> Bool
+allOdd Empty = True
+allOdd (Cons x xs) = if_then_else2 (od x) (allOdd xs) False 
