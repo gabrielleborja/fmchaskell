@@ -48,7 +48,7 @@ max (S n) (S m) = S(min n m)
 monus :: Nat -> Nat -> Nat
 monus n O = n 
 monus O _ = O
-monus (S n) (S m) = S(monus n m)
+monus (S n) (S m) = pred (pred (monus n m))
 
 --Bool:
 
@@ -72,3 +72,4 @@ od O = False
 od (S O) = True
 od (S (S O)) = False
 od (S (S n)) = od n
+
