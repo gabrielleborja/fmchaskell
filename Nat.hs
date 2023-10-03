@@ -73,3 +73,6 @@ od (S O) = True
 od (S (S O)) = False
 od (S (S n)) = od n
 
+isZero :: Nat -> Bool
+isZero O = True
+isZero _ = False
