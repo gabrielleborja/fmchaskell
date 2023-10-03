@@ -1,5 +1,5 @@
 module ListNat where
-import Prelude hiding (Nil, length, sum, product)
+import Prelude hiding (Nil, length, sum, product, elem)
 import Nat
 
 data ListNat = Empty | Cons Nat ListNat
@@ -14,5 +14,9 @@ sumList Empty = O
 sumList (Cons n ns) = sum n (sumList ns)
 
 product :: ListNat -> Nat
-product Empty = 1
+product Empty = (S O)
 product (Cons n ns) = mult n (product ns)
+
+elem :: Nat -> ListNat -> Bool
+elem _ Empty = False
+elem n (Cons x xs) = if (n == x) then True else (elem n xs)
