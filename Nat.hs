@@ -1,5 +1,5 @@
 module Nat where
-import Prelude hiding (sum, mult, exp, quot, min, gcd, lcm, div, max, pred, rem, minus, fact, fib, double)
+import Prelude hiding (sum, mult, exp, quot, min, gcd, lcm, div, max, pred, rem, minus, fact, fib, double, True, Bool, False, if_then_else, leq)
 import Bool
 
 data Nat = O | S Nat
@@ -58,5 +58,5 @@ if_then_else False _ n = n
 
 leq :: Nat -> Nat -> Bool
 leq O _ = True
-leq n O = False
-leq S (n) S (m) = leq n m 
+leq _ O = False
+leq (S n) (S m) = leq n m 
