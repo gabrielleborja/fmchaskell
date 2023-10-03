@@ -1,5 +1,6 @@
 module Nat where
 import Prelude hiding (sum, mult, exp, quot, min, gcd, lcm, div, max, pred, rem, minus, fact, fib, double)
+import Bool
 
 data Nat = O | S Nat
     deriving ( Eq , Show )
@@ -48,3 +49,14 @@ monus :: Nat -> Nat -> Nat
 monus n O = n 
 monus O _ = O
 monus (S n) (S m) = S(monus n m)
+
+--Bool:
+
+if_then_else :: Bool -> Nat -> Nat -> Nat
+if_then_else True n _ = n
+if_then_else False _ n = n
+
+leq :: Nat -> Nat -> Bool
+leq O _ = True
+leq n O = False
+leq S (n) S (m) = leq n m 
