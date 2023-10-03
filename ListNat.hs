@@ -9,3 +9,7 @@ length :: ListNat -> Nat
 length Empty = O
 length (Cons _ l) = S (length l)
 
+sumList :: ListNat -> Nat
+sumList Empty = O
+sumList (Cons n ns) = sum n (sumList ns)
+
