@@ -66,3 +66,9 @@ ev O = True
 ev (S O) = False
 ev (S (S O)) = True
 ev (S (S n)) = ev n  
+
+od :: Nat -> Bool
+od O = False
+od (S O) = True
+od (S (S O)) = False
+od (S (S n)) = od n
