@@ -1,9 +1,9 @@
 module Nat where
-import Prelude hiding (sum, mult, exp, quot, min, gcd, lcm, div, max, pred, rem, minus, fact, fib, double, True, Bool, False, if_then_else, leq)
-import Bool
+import Prelude hiding (sum, mult, exp, quot, min, gcd, lcm, div, max, pred, rem, minus, fact, fib, double, leq)
+
 
 data Nat = O | S Nat
-    deriving ( Eq , Show )
+    deriving ( Prelude.Eq , Prelude.Show )
 
 sum :: Nat -> Nat -> Nat
 sum n O = n
@@ -50,29 +50,27 @@ monus n O = n
 monus O _ = O
 monus (S n) (S m) = pred (pred (monus n m))
 
---Bool:
 
-if_then_else :: Bool -> Nat -> Nat -> Nat
-if_then_else True n _ = n
-if_then_else False _ n = n
 
-leq :: Nat -> Nat -> Bool
-leq O _ = True
-leq _ O = False
+
+
+leq :: Nat -> Nat -> Prelude.Bool
+leq O _ = Prelude.True
+leq _ O = Prelude.False
 leq (S n) (S m) = leq n m 
 
-ev :: Nat -> Bool
-ev O = True 
-ev (S O) = False
-ev (S (S O)) = True
+ev :: Nat -> Prelude.Bool
+ev O = Prelude.True 
+ev (S O) = Prelude.False
+ev (S (S O)) = Prelude.True
 ev (S (S n)) = ev n  
 
-od :: Nat -> Bool
-od O = False
-od (S O) = True
-od (S (S O)) = False
+od :: Nat -> Prelude.Bool
+od O = Prelude.False
+od (S O) = Prelude.True
+od (S (S O)) = Prelude.False
 od (S (S n)) = od n
 
-isZero :: Nat -> Bool
-isZero O = True
-isZero _ = False
+isZero :: Nat -> Prelude.Bool
+isZero O = Prelude.True
+isZero _ = Prelude.False
