@@ -50,6 +50,13 @@ monus n O = n
 monus O _ = O
 monus  n (S m) = pred (monus n m)
 
+div:: Nat -> Nat -> (Nat, Nat)
+div _ O = error "No."
+div n m 
+   | n == m = (S O, O)
+   |leq n m = (O, n)
+   | otherwise = (S q, r)
+        where (q, r) = div (monus n m) m 
 
 leq :: Nat -> Nat -> Bool
 leq O _ = True
