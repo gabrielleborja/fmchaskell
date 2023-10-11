@@ -89,9 +89,9 @@ isZero _ = False
 
 isMul₃ :: Nat -> Bool
 isMul₃ O = True 
-isMul₃ n = if rem n (S (S (S O))) == O then True else False
+isMul₃ n = rem n (S (S (S O))) == O 
 
 divides :: Nat -> Nat -> Bool
 divides _ O = True
 divides O _ = False
-divides n m = if rem m n == O then True else False
+divides n m = rem m n == O 
