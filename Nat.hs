@@ -59,7 +59,10 @@ div n m
         where (q, r) = div (monus n m) m 
 
 quot :: Nat -> Nat -> Nat
-quot a b = fst(div a b)
+quot n m = fst(div n m)
+
+rem :: Nat -> Nat -> Nat
+rem n m = snd(div n m)
 
 leq :: Nat -> Nat -> Bool
 leq O _ = True
