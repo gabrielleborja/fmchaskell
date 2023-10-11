@@ -58,6 +58,9 @@ div n m
    | otherwise = (S q, r)
         where (q, r) = div (monus n m) m 
 
+quot :: Nat -> Nat -> Nat
+quot a b = fst(div a b)
+
 leq :: Nat -> Nat -> Bool
 leq O _ = True
 leq _ O = False
