@@ -71,3 +71,4 @@ multNat n (Cons x xs) = Cons (mult n x) (multNat n xs)
 expNat :: Nat -> ListNat -> ListNat
 expNat n Empty = Empty
 expNat n (Cons x xs) = Cons (exp n x) (expNat n xs)
+
