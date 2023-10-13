@@ -1,5 +1,5 @@
 module ListNat where
-import Prelude hiding (Nil, length, sum, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat)
+import Prelude hiding (Nil, length, sum, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo)
 import Nat
 
 
@@ -71,4 +71,10 @@ multNat n (Cons x xs) = Cons (mult n x) (multNat n xs)
 expNat :: Nat -> ListNat -> ListNat
 expNat n Empty = Empty
 expNat n (Cons x xs) = Cons (exp n x) (expNat n xs)
+
+enumFromTo :: Nat -> Nat -> ListNat
+enumFromTo n m 
+    |n == m = Cons n Empty
+    |leq n m = append m (enumFromTo n (monus m (S O)))
+    |leq m n = Empty
 
