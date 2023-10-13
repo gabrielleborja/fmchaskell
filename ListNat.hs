@@ -1,5 +1,5 @@
 module ListNat where
-import Prelude hiding (Nil, length, sum, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo, enumTo, take, drop, head)
+import Prelude hiding (Nil, length, sum, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo, enumTo, take, drop, head, tail)
 import Nat
 
 
@@ -94,3 +94,7 @@ drop (S n) (Cons x xs) = drop n xs
 head :: ListNat -> Nat
 head Empty = error "Empty list has no head."
 head (Cons x xs) = x
+
+tail :: ListNat -> ListNat
+tail Empty = error "Empty list has no tail."
+tail (Cons x xs) = xs
