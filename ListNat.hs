@@ -1,5 +1,5 @@
 module ListNat where
-import Prelude hiding (Nil, length, sum, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo)
+import Prelude hiding (Nil, length, sum, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo, enumTo)
 import Nat
 
 
@@ -78,3 +78,5 @@ enumFromTo n m
     |leq n m = append m (enumFromTo n (monus m (S O)))
     |leq m n = Empty
 
+enumTo :: Nat -> ListNat
+enumTo = enumFromTo O 
