@@ -1,5 +1,5 @@
 module ListNat where
-import Prelude hiding (Nil, length, sum, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo, enumTo, take)
+import Prelude hiding (Nil, length, sum, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo, enumTo, take, drop)
 import Nat
 
 
@@ -85,3 +85,8 @@ take :: Nat -> ListNat -> ListNat
 take O _ = Empty
 take _ Empty = Empty
 take (S n) (Cons x xs) = Cons x (take n xs)
+
+drop :: Nat -> ListNat -> ListNat
+drop _ Empty = Empty
+drop O xs = xs
+drop (S n) (Cons x xs) = drop n xs
