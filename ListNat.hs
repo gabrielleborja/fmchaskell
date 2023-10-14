@@ -105,7 +105,6 @@ last (Cons x Empty) = x
 last (Cons x xs) = last xs
 
 init :: ListNat -> ListNat
-init Empty = error "Empty list has no init."
 init (Cons n Empty) = Empty
 init (Cons n ns) = Cons n (init ns)
 
