@@ -1,5 +1,5 @@
 module ListNat where
-import Prelude hiding (Nil, length, sum, pred, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo, enumTo, take, drop, head, tail, last, init)
+import Prelude hiding (Nil, length, sum, pred, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo, enumTo, take, drop, head, tail, last, init, filterEven)
 import Nat
 
 
@@ -108,3 +108,7 @@ init :: ListNat -> ListNat
 init Empty = error "Empty list has no init."
 init (Cons n Empty) = Empty
 init (Cons n ns) = Cons n (init ns)
+
+filterEven :: ListNat -> ListNat
+filterEven Empty = Empty
+filterEven (Cons n ns) = if ev n then Cons n (filterEven ns) else filterEven ns
