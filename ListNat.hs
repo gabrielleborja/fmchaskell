@@ -1,5 +1,5 @@
 module ListNat where
-import Prelude hiding (Nil, length, sum, pred, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo, enumTo, take, drop, head, tail, last, init, filterEven)
+import Prelude hiding (Nil, length, sum, pred, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo, enumTo, take, drop, head, tail, last, init, filterEven, filterOdd)
 import Nat
 
 
@@ -112,3 +112,7 @@ init (Cons n ns) = Cons n (init ns)
 filterEven :: ListNat -> ListNat
 filterEven Empty = Empty
 filterEven (Cons n ns) = if ev n then Cons n (filterEven ns) else filterEven ns
+
+filterOdd :: ListNat -> ListNat
+filterOdd Empty = Empty
+filterOdd (Cons n ns) = if od n then Cons n (filterOdd ns) else filterOdd ns
