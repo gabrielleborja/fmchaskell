@@ -1,7 +1,7 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Redundant if" #-}
 module Nat where
-import Prelude hiding (sum, mult, exp, quot, min, gcd, lcm, div, max, pred, rem, minus, fact, fib, double, leq, isMul₃, divides, ev, od)
+import Prelude hiding (sum, mult, exp, quot, min, gcd, lcm, div, max, pred, rem, minus, fact, fib, double, leq, isMul₃, divides, ev, od, gcd)
 
 
 data Nat = O | S Nat
@@ -65,6 +65,10 @@ quot n m = fst(div n m)
 
 rem :: Nat -> Nat -> Nat
 rem n m = snd(div n m)
+
+gcd :: Nat -> Nat -> Nat
+gcd n O = n
+gcd n m = gcd m (rem n m)
 
 leq :: Nat -> Nat -> Bool
 leq O _ = True
