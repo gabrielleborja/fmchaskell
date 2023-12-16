@@ -2,7 +2,7 @@
 {-# HLINT ignore "Use camelCase" #-}
 module Bool where
 import Prelude hiding (Bool, True, False, if_then_else2, if_then_else)
-import Nat
+import Nat ( Nat )
 
 data Bool = False | True 
     deriving ( Eq , Show)

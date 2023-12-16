@@ -1,7 +1,6 @@
 module ListNat where
-import Prelude hiding (Nil, length, sum, pred, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo, enumTo, take, drop, head, tail, last, init, filterEven, filterOdd, intersperse)
+import Prelude hiding (Nil, length, sum, pred, exp, product, elem, (++), append, reverse, allEven, anyEven, allOdd, anyOdd, allZero, anyZero, multNat, expNat, enumFromTo, enumTo, take, drop, head, tail, last, init, filterEven, filterOdd, intersperse, stretch, pwAdd, pwMul, pwExp, countdown)
 import Nat
-
 
 data ListNat = Empty | Cons Nat ListNat
     deriving ( Eq, Show )
@@ -120,3 +119,26 @@ intersperse :: Nat -> ListNat -> ListNat
 intersperse _ Empty = Empty
 intersperse _ (Cons n Empty) = Cons n Empty
 intersperse x (Cons n ns) = Cons n (Cons x (intersperse x ns))
+
+stretch :: Nat -> ListNat -> ListNat
+stretch _ Empty = Empty
+stretch (S n) (Cons x xs) = Cons x (stretch n (Cons x xs))
+
+pwAdd :: ListNat -> ListNat -> ListNat
+pwAdd Empty xs = xs
+pwAdd xs Empty = xs
+pwAdd (Cons x xs) (Cons y ys) = Cons (sum x y) (pwAdd xs ys)
+
+pwMul :: ListNat -> ListNat -> ListNat
+pwMul Empty xs = xs
+pwMul xs Empty = xs
+pwMul (Cons x xs) (Cons y ys) = Cons (mult x y) (pwMul xs ys)
+
+pwExp :: ListNat -> ListNat -> ListNat
+pwExp Empty xs = xs
+pwExp xs Empty = xs
+pwExp (Cons x xs) (Cons y ys) = Cons (exp x y) (pwExp xs ys)
+
+countdown :: Nat -> ListNat
+countdown (S O) = Cons (S O) (Cons O Empty)
+countdown (S n) = Cons (S n) (countdown n)
